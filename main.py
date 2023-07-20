@@ -45,16 +45,8 @@ class Bibliography:
         if not self.author and " / " in self.title:
             self.author = self.title.split(" / ")[0]
         
-        name = self.author.split(", ")
-        if len(name)>1:
-            name = name[1] +" "+name[0]
-            if (" by "+name) in self.title:
-                self.title = self.title.rstrip(" by "+name)
-
-        if " / by" in self.title:
+        if " / " in self.title:
             self.title = self.title.split(" / ")[0]
-
-        self.title = self.title.rstrip(" /")
         
 
 
